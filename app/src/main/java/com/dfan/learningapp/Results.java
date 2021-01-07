@@ -5,12 +5,12 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Results extends AppCompatActivity
+public class Results extends AppCompatActivity implements View.OnClickListener
 {
     TextView TvGrades;
     TextView TvWrongQue;
@@ -18,6 +18,7 @@ public class Results extends AppCompatActivity
     TextView Tvadvice;
     TextView TvStandardQue;
     TextView TvStandardAns;
+    Button BtNextChapter;
 
     public void onBackPressed()
     {
@@ -61,6 +62,8 @@ public class Results extends AppCompatActivity
         Tvadvice = findViewById(R.id.Tvadvice);
         TvStandardAns = findViewById(R.id.TvStandardAns);
         TvStandardQue = findViewById(R.id.TvStandardQue);
+        BtNextChapter = findViewById(R.id.BtNextChapter);
+        BtNextChapter.setOnClickListener(this);
         Intent intent = getIntent();
         Bundle box = intent.getExtras();
         Float Grades = box.getFloat("Points");
@@ -81,15 +84,29 @@ public class Results extends AppCompatActivity
             }
             else
             {
-                Tvadvice.setText("Ήσουν πολύ κακός, καλύτερα να γυρίσεις πίσω και να διαβάσεις το κεφάλαιο από την αρχή.");
-                //Κωδικας για να παταει ο χρηστης στο κειμενο και να διαβαζει απο την αρχη το κεφαλαιο!
-            }
-
+                BtNextChapter.setVisibility(View.INVISIBLE);
+                Tvadvice.setText("Ήσουν πολύ κακός, πάτησε ΕΔΩ για να γυρίσεις πίσω και να διαβάσεις το κεφάλαιο από την αρχή.");
+                Tvadvice.setOnClickListener(new View.OnClickListener()
+                {
+                    @Override
+                    public void onClick(View v)
+                    {
+                        Intent intent = new Intent(getApplicationContext(), Act2.class);
+                        startActivity(intent);
+                    }
+                });
         String grades = Float.toString(Grades);
         TvGrades.setText(grades + "%");
         String WrongQue = box.getString("WrongQue");
         TvWrongQue.setText(WrongQue);
         String WrongAns = box.getString("WrongAns");
         TvWrongAns.setText(WrongAns);
+    }
+}
+
+    @Override
+    public void onClick(View v)
+    {
+        //Κωδικας του κουμπιου για το επομενο κεφαλαιο
     }
 }

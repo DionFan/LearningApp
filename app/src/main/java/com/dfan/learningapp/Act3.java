@@ -103,14 +103,14 @@ public class Act3 extends AppCompatActivity implements View.OnClickListener
                 BtOK.setVisibility(View.VISIBLE);
                 BtPrev.setVisibility(View.VISIBLE);
                 TvQueNumber.setVisibility(View.VISIBLE);
-                startCountDownTimertask(mCountDownBar1,60);
+                startCountDownTimertask(mCountDownBar1,120);
             }
         });
         BackDraw = TvAnswers[0].getBackground();
         AllQuests = Questionnaire.GetInstance (this);
         DoNext ();
         mCountDownBar1 = new CircularCountDownBar.Builder(this)
-                .setMaxProgress(60)
+                .setMaxProgress(120)
                 .setProgressColor(Color.GREEN)
                 .setTextColor(Color.WHITE)
                 .build();
