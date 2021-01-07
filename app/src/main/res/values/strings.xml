@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LearningApp</string>
+    <string name="screen1">Εδω γραφω οτι θέλω</string>
+    <string name="screen2">Εδω γραφω οτι θέλω 2</string>
+    <string name="Fin1Chapter">Τέλος του Πρώτου Κεφαλαίου\n Στην επόμενη σελίδα ξεκινάει το TEST σας</string>
+    <string name="WrongQue"><u>Οι λανθασμένες ερωτήσεις σου ήταν οι εξής:</u></string>
+    <string name="WrongAns"><u>Οι αντίστοιχες σωστές ερωτήσεις ειναι οι εξής:</u></string>
+</resources>
