@@ -10,12 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 
-/**
- * Simple single android view component that can be used to showing a circular count down bar.
- * It can be customized with size, stroke size, colors and text etc.
- * Progress(time seconds) change will be animated.
- * Created by Murray Shay
- */
+
 public class CircularCountDownBar extends View {
     private final static String LT = CircularCountDownBar.class.getSimpleName();
     private int mViewWidth;
@@ -49,6 +44,7 @@ public class CircularCountDownBar extends View {
         private boolean mDrawText = true;
         private boolean mRoundedCorners = true;
         private int mProgressColor = Color.BLACK;
+        private int lastprogressColor = Color.RED;
         private int mTextColor = Color.BLACK;
         private int paddingTop = 5;
         private int paddingLeft = 5;
@@ -89,7 +85,8 @@ public class CircularCountDownBar extends View {
             return this;
         }
 
-        public Builder setProgressColor(int progressColor) {
+        public Builder setProgressColor(int progressColor)
+        {
             mProgressColor = progressColor;
             return this;
         }
@@ -180,7 +177,9 @@ public class CircularCountDownBar extends View {
     }
 
     /**
-     * Set the properties of the paints we're using to
+     * Set the properties of the paints
+     *
+     * we're using to
      * draw the progress wheel
      */
     private void setupPaints() {
