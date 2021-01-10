@@ -48,7 +48,7 @@ public class Questionnaire
         int NoQ;
         AssetManager AssMan = Cont.getAssets();
         System.out.println ("*** !!!!!");
-        try (BufferedReader BR = new BufferedReader (new InputStreamReader (AssMan.open ("Questionnaire.txt"))))
+        try (BufferedReader BR = new BufferedReader (new InputStreamReader (AssMan.open ("Questionnaire1.txt"))))
         {
             System.out.println ("*** -----");
             NoQ = Integer.parseInt (BR.readLine ());
