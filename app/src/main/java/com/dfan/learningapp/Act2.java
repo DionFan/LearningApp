@@ -2,6 +2,8 @@ package com.dfan.learningapp;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.ViewCompat;
@@ -14,6 +16,7 @@ public class Act2 extends AppCompatActivity
 {
     ViewPager2 myViewPager2;
     MyAdapter MyAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

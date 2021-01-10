@@ -69,9 +69,11 @@ public class Results extends AppCompatActivity implements View.OnClickListener
         Float Grades = box.getFloat("Points");
             if (Grades >= 90.0)
             {
-                Tvadvice.setText("Ήσουν ΑΡΙΣΤΟΣ!!! συνέχισε την καλή δουλειά.");
+                Tvadvice.setText("Ήσουν ΑΡΙΣΤΟΣ!!! Συνέχισε την καλή δουλειά.");
                 TvStandardQue.setVisibility(View.INVISIBLE);
                 TvStandardAns.setVisibility(View.INVISIBLE);
+                TvWrongAns.setVisibility(View.INVISIBLE);
+                TvWrongQue.setVisibility(View.INVISIBLE);
 
             }
             else if (Grades >= 75.0)
