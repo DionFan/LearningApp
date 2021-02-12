@@ -6,7 +6,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
+
 
 public class Questionnaire
 {
@@ -14,14 +14,13 @@ public class Questionnaire
     private int CurQuest;
     private static Questionnaire Instance = null;
     private static Context Cont;
-    //private float success = 0.0f;
     int wrong = 0;
 
-    public static Questionnaire GetInstance (Context Co)
+    public static Questionnaire GetInstance (Context Co, int x)
     {
         Cont = Co;
         if (Instance == null)
-            Instance = new Questionnaire ();
+            Instance = new Questionnaire (x);
         return Instance;
     }
 
@@ -36,38 +35,69 @@ public class Questionnaire
         CurQuest = curQuest;
     }
 
-    private Questionnaire ()
+    private Questionnaire (int x)
     {
         Questions = new ArrayList ();
         CurQuest = -1 ;
-        LoadDatabase ();
+        LoadDatabase (x);
     }
 
-    private void LoadDatabase ()
+    private void LoadDatabase (int x)
     {
         int NoQ;
         AssetManager AssMan = Cont.getAssets();
         System.out.println ("*** !!!!!");
-        try (BufferedReader BR = new BufferedReader (new InputStreamReader (AssMan.open ("Questionnaire1.txt"))))
+        if(x==1)
         {
-            System.out.println ("*** -----");
-            NoQ = Integer.parseInt (BR.readLine ());
-            for (int i = 0; i < NoQ; i++)
+            try (BufferedReader BR = new BufferedReader (new InputStreamReader (AssMan.open ("Questionnaire1.txt"))))
             {
-                System.out.println ("*** ///");
-                Question Q = new Question ();
-                Q.setQueText (BR.readLine ());
-                int NoA = Integer.parseInt (BR.readLine ());
-                Q.setCorrectAns (Integer.parseInt (BR.readLine ()));
-                for (int j = 0; j < NoA; j++)
-                    Q.AddAnswer (BR.readLine ());
-                Questions.add (Q);
+                System.out.println ("*** -----");
+                NoQ = Integer.parseInt (BR.readLine ());
+                for (int i = 0; i < NoQ; i++)
+                {
+                    System.out.println ("*** ///");
+                    Question Q = new Question ();
+                    Q.setQueText (BR.readLine ());
+                    int NoA = Integer.parseInt (BR.readLine ());
+                    Q.setCorrectAns (Integer.parseInt (BR.readLine ()));
+                    for (int j = 0; j < NoA; j++)
+                        Q.AddAnswer (BR.readLine ());
+                    Questions.add (Q);
+                }
+            }
+            catch (IOException e1)
+            {
+                System.err.println ("***Exception in Reading Database");
             }
         }
-        catch (IOException e1)
+        else if(x==2)
         {
-            System.err.println ("***Exception in Reading Database");
+            try (BufferedReader BR = new BufferedReader (new InputStreamReader (AssMan.open ("Questionnaire2.txt"))))
+            {
+                System.out.println ("*** -----");
+                NoQ = Integer.parseInt (BR.readLine ());
+                for (int i = 0; i < NoQ; i++)
+                {
+                    System.out.println ("*** ///");
+                    Question Q = new Question ();
+                    Q.setQueText (BR.readLine ());
+                    int NoA = Integer.parseInt (BR.readLine ());
+                    Q.setCorrectAns (Integer.parseInt (BR.readLine ()));
+                    for (int j = 0; j < NoA; j++)
+                        Q.AddAnswer (BR.readLine ());
+                    Questions.add (Q);
+                }
+            }
+            catch (IOException e1)
+            {
+                System.err.println ("***Exception in Reading Database");
+            }
         }
+        else if(x==3)
+        {
+
+        }
+
     }
 
     public int GetNoQuestions ()

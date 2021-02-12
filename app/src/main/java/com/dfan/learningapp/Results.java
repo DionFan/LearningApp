@@ -1,5 +1,6 @@
 package com.dfan.learningapp;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -95,20 +96,23 @@ public class Results extends AppCompatActivity implements View.OnClickListener
                     {
                         Intent intent = new Intent(getApplicationContext(), Act2.class);
                         startActivity(intent);
+                        Activity Act2 = null;
+                        Act2.startActivity(intent);
                     }
                 });
+    }
         String grades = Float.toString(Grades);
         TvGrades.setText(grades + "%");
         String WrongQue = box.getString("WrongQue");
         TvWrongQue.setText(WrongQue);
         String WrongAns = box.getString("WrongAns");
         TvWrongAns.setText(WrongAns);
-    }
 }
 
     @Override
     public void onClick(View v)
     {
-        //Κωδικας του κουμπιου για το επομενο κεφαλαιο
+        Intent intent = new Intent (getApplicationContext (),  Chapter2.class);
+        startActivity (intent);
     }
 }

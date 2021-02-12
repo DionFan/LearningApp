@@ -129,7 +129,7 @@
         android:id="@+id/BtStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="START \nTEST"
+        android:text="Ας Ξεκινήσουμε!"
         app:layout_constraintBottom_toTopOf="@+id/BtOK"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

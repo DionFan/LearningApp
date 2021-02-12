@@ -64,6 +64,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
             holder.TvChap.setTextColor(Color.GREEN);
             holder.Tvlesson.setText(R.string.screen1_4);
             holder.Tvlesson.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
+            holder.Ivagnostes.setVisibility(View.VISIBLE);
         }
         else if (position == 2)
         {
@@ -118,10 +119,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
             holder.tvName.setText(R.string.screen1);
             holder.tvName.setTextColor(Color.BLUE);
             holder.tvName.setBackgroundColor(Color.WHITE);
-            holder.TvChap.setText("Η θεωρία για το πρώτο κεφάλαιο τέλειωσε, αν είστε έτοιμος πατήστε το κουμπί πιο κατω για να ξεκινήστε το TEST σας!");
+            holder.TvChap.setText(R.string.test);
             holder.TvChap.setTextColor(Color.MAGENTA);
             holder.TvChap.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
-            holder.BtTest.setVisibility(View.VISIBLE);
+            holder.TvChap.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
+                    Intent intent = new Intent (context.getApplicationContext(), Act3.class);
+                    context.startActivity(intent);
+                }
+            });
+            holder.BtTest.setVisibility(View.INVISIBLE);
             holder.Tvlesson.setVisibility(View.INVISIBLE);
         }
         /*if (position %2 == 0)
@@ -155,7 +165,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
         TextView TvVideo1;
         TextView TvVideo2;
         ImageView IvVavelTower;
-        //ImageView imgBanner;
+        ImageView Ivagnostes;
         Button BtTest;
 
 
@@ -165,6 +175,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
             TvChap = itemView.findViewById(R.id.TvChap);
             IvVavelTower = itemView.findViewById(R.id.IvVavelTower);
             IvVavelTower.setVisibility(View.INVISIBLE);
+            Ivagnostes = itemView.findViewById(R.id.Ivagnostes);
+            Ivagnostes.setVisibility(View.INVISIBLE);
             TvVideo1 = itemView.findViewById(R.id.TvVideo1);
             TvVideo2 = itemView.findViewById(R.id.TvVideo2);
             Tvlesson = itemView.findViewById(R.id.Tvlesson);
@@ -180,7 +192,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
                     context.startActivity(intent);
                 }
             }));
-            //imgBanner = itemView.findViewById(R.id.imgBanner);
+            
         }
     }
 }

@@ -104,5 +104,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TvVideo2" />
 
+    <ImageView
+        android:id="@+id/Ivagnostes"
+        android:layout_width="403dp"
+        android:layout_height="265dp"
+        android:layout_marginTop="276dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Tvlesson"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/agnostes" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

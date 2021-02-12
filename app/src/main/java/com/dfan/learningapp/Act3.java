@@ -107,7 +107,7 @@ public class Act3 extends AppCompatActivity implements View.OnClickListener
             }
         });
         BackDraw = TvAnswers[0].getBackground();
-        AllQuests = Questionnaire.GetInstance (this);
+        AllQuests = Questionnaire.GetInstance (this, 1);
         DoNext ();
         mCountDownBar1 = new CircularCountDownBar.Builder(this)
                 .setMaxProgress(120)
