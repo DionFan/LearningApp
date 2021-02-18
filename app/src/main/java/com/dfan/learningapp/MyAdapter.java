@@ -122,6 +122,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
             holder.TvChap.setText(R.string.test);
             holder.TvChap.setTextColor(Color.MAGENTA);
             holder.TvChap.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
+            holder.Tvlesson.setVisibility(View.VISIBLE);
+            holder.Tvlesson.setText(R.string.askhsh1);
+            holder.Tvlesson.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
             holder.TvChap.setOnClickListener(new View.OnClickListener()
             {
                 @Override
@@ -132,7 +135,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
                 }
             });
             holder.BtTest.setVisibility(View.INVISIBLE);
-            holder.Tvlesson.setVisibility(View.INVISIBLE);
+            holder.Tvlesson.setVisibility(View.VISIBLE);
+            holder.Tvlesson.setText(R.string.askhsh1);
+            holder.Tvlesson.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
         }
         /*if (position %2 == 0)
         {

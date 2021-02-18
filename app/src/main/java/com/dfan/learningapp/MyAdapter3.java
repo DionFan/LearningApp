@@ -1,5 +1,6 @@
 package com.dfan.learningapp;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -19,28 +20,31 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.graphics.Color;
 import android.widget.ImageView;
 
-
-public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> implements View.OnClickListener
+public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> implements View.OnClickListener
 {
+
     private Context context;
 
-    public MyAdapter2(Context context)
+    public MyAdapter3(Context context)
     {
         this.context = context;
     }
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+    public MyAdapter3.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+
     {
-        View view = LayoutInflater.from(context).inflate(R.layout.myadapter2, parent, false);
-        return new MyViewHolder(view);
+        View view = LayoutInflater.from(context).inflate(R.layout.myadapter3, parent, false);
+        return new MyAdapter3.MyViewHolder(view);
     }
 
+    @SuppressLint("ResourceAsColor")
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position)
+    public void onBindViewHolder(@NonNull MyAdapter3.MyViewHolder holder, int position)
     {
+
         //holder.tvName.setText(String.format("Page  %d ", position + 1));
         boolean start = false;
         if (position == 0)
@@ -48,28 +52,19 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> im
             holder.tvName.setText(R.string.screen1);
             holder.tvName.setTextColor(Color.BLUE);
             holder.tvName.setBackgroundColor(Color.WHITE);
-            holder.TvChap.setText(R.string.chap2);
+            holder.TvChap.setText(R.string.chap3);
             holder.TvChap.setTextColor(Color.GREEN);
             holder.TvChap.setVisibility(View.VISIBLE);
-            holder.Tvlesson2.setText(R.string.chap2_2);
-            holder.Tvlesson2.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
+            holder.Tvlesson.setText(R.string.chap3_1);
+            //holder.Tvlesson.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
+            holder.Tvlesson.setVisibility(View.VISIBLE);
+            holder.Tvlesson.setBackgroundColor(context.getResources().getColor(R.color.coral));
+            holder.Tvlesson.setTextColor(Color.BLACK);
             holder.Tvlesson2.setVisibility(View.VISIBLE);
-            holder.Ivargo.setVisibility(View.VISIBLE);
-            holder.TvVideo1.setVisibility(View.VISIBLE);
-            holder.TvVideo1.setTextColor(Color.YELLOW);
-            holder.TvVideo1.setOnClickListener(new View.OnClickListener()
-            {
-                @Override
-                public void onClick(View v)
-                {
-                    context.startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.youtube.com/watch?v=J3letleHneo")));
-                    Log.i("Video", "Video Playing....");
-                }
-            });
-            holder.Tvlesson3.setVisibility(View.VISIBLE);
-            holder.Tvlesson3.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
-            holder.Tvlesson3.setText(R.string.chap2_3);
-
+            holder.Tvlesson2.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
+            holder.Tvlesson2.setText(R.string.chap3_2);
+            //holder.Ivaerostata.setVisibility(View.VISIBLE);
+            holder.Tvlesson3.setVisibility(View.INVISIBLE);
         }
         else if (position == 1)
         {
@@ -77,12 +72,12 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> im
             holder.tvName.setTextColor(Color.BLUE);
             holder.tvName.setBackgroundColor(Color.WHITE);
             holder.TvChap.setVisibility(View.VISIBLE);
-            holder.TvChap.setText(R.string.chap2);
+            holder.TvChap.setText(R.string.chap3);
             holder.TvChap.setTextColor(Color.GREEN);
-            holder.Tvlesson.setText(R.string.chap2_4);
-            holder.Tvlesson.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
-            holder.Tvlesson.setVisibility(View.VISIBLE);
-            holder.Tvlesson3.setVisibility(View.INVISIBLE);
+            holder.Ivaerostata.setVisibility(View.VISIBLE);
+            holder.Tvlesson3.setText(R.string.chap3_3);
+            holder.Tvlesson3.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
+            holder.Tvlesson3.setVisibility(View.VISIBLE);
         }
         else if (position == 2)
         {
@@ -90,11 +85,12 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> im
             holder.tvName.setTextColor(Color.BLUE);
             holder.tvName.setBackgroundColor(Color.WHITE);
             holder.TvChap.setVisibility(View.VISIBLE);
-            holder.TvChap.setText(R.string.chap2);
+            holder.TvChap.setText(R.string.chap3);
             holder.TvChap.setTextColor(Color.GREEN);
-            holder.Tvlesson.setText(R.string.chap2_5);
+            holder.Tvlesson.setText(R.string.chap3_4);
             holder.Tvlesson.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
             holder.Tvlesson.setVisibility(View.VISIBLE);
+            holder.Tvlesson2.setVisibility(View.INVISIBLE);
             holder.Tvlesson3.setVisibility(View.INVISIBLE);
         }
         else if (position == 3)
@@ -103,11 +99,12 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> im
             holder.tvName.setTextColor(Color.BLUE);
             holder.tvName.setBackgroundColor(Color.WHITE);
             holder.TvChap.setVisibility(View.VISIBLE);
-            holder.TvChap.setText(R.string.chap2);
+            holder.TvChap.setText(R.string.chap3);
             holder.TvChap.setTextColor(Color.GREEN);
-            holder.Tvlesson.setText(R.string.chap2_6);
+            holder.Tvlesson.setText(R.string.chap3_5);
             holder.Tvlesson.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
             holder.Tvlesson.setVisibility(View.VISIBLE);
+            holder.Tvlesson2.setVisibility(View.INVISIBLE);
             holder.Tvlesson3.setVisibility(View.INVISIBLE);
 
         }
@@ -117,11 +114,11 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> im
             holder.tvName.setTextColor(Color.BLUE);
             holder.tvName.setBackgroundColor(Color.WHITE);
             holder.TvChap.setVisibility(View.VISIBLE);
-            holder.TvChap.setText(R.string.test1);
+            holder.TvChap.setText(R.string.test2);
             holder.TvChap.setTextColor(Color.MAGENTA);
             holder.TvChap.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
             holder.Tvlesson.setVisibility(View.VISIBLE);
-            holder.Tvlesson.setText(R.string.askhsh2);
+            holder.Tvlesson.setText(R.string.askhsh3);
             holder.Tvlesson.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
             holder.TvChap.setOnClickListener(new View.OnClickListener()
             {
@@ -129,15 +126,12 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> im
                 public void onClick(View v)
                 {
                     System.out.println("***EDW1");
-                    //Intent intent = new Intent (context.getApplicationContext(), Chapter2Que.class);
-                    //context.startActivity(intent);
-                    Intent intent = new Intent(context.getApplicationContext(), Chapter2Que.class);
+                    Intent intent = new Intent(context.getApplicationContext(), Chapter3Que.class);
                     context.startActivity(intent);
-                    Activity Chapter2Que = null;
-                    Chapter2Que.startActivity(intent);
+                    Activity Chapter3Que = null;
+                    Chapter3Que.startActivity(intent);
                 }
             });
-            holder.BtTest.setVisibility(View.INVISIBLE);
             holder.Tvlesson3.setVisibility(View.INVISIBLE);
         }
         /*if (position %2 == 0)
@@ -163,45 +157,25 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> im
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder
+
     {
         TextView TvChap;
         TextView tvName;
         TextView Tvlesson;
         TextView Tvlesson2;
-        TextView TvVideo1;
-        Button BtTest;
-        ImageView Ivargo;
         TextView Tvlesson3;
+        ImageView Ivaerostata;
 
 
         public MyViewHolder(@NonNull View itemView)
         {
             super(itemView);
             TvChap = itemView.findViewById(R.id.TvChap);
-            TvVideo1 = itemView.findViewById(R.id.TvVideo1);
             Tvlesson = itemView.findViewById(R.id.Tvlesson);
             Tvlesson2 = itemView.findViewById(R.id.Tvlesson2);
             tvName = itemView.findViewById(R.id.tvName);
-            BtTest = itemView.findViewById(R.id.BtTest);
-            Ivargo = itemView.findViewById(R.id.Ivargo);
             Tvlesson3 = itemView.findViewById(R.id.Tvlesson3);
-            BtTest.setOnClickListener((new View.OnClickListener ()
-            {
-                @Override
-                public void onClick (View v)
-                {
-                    //Context context = null;
-                    System.out.println("***EDW2");
-                    //Intent intent = new Intent (context.getApplicationContext(), Chapter2Que.class);
-                    //context.startActivity(intent);
-                    Intent intent = new Intent(context.getApplicationContext(), Chapter2Que.class);
-                    context.startActivity(intent);
-                    Activity Chapter2Que = null;
-                    Chapter2Que.startActivity(intent);
-                }
-            }));
-
+            Ivaerostata = itemView.findViewById(R.id.Ivaerostata);
         }
     }
 }
-

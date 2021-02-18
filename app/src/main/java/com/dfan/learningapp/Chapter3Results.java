@@ -4,15 +4,18 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.text.LineBreaker;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager2.widget.ViewPager2;
 
-public class Results extends AppCompatActivity implements View.OnClickListener
+public class Chapter3Results extends AppCompatActivity implements View.OnClickListener
 {
     TextView TvGrades;
     TextView TvWrongQue;
@@ -39,7 +42,7 @@ public class Results extends AppCompatActivity implements View.OnClickListener
                     public void onClick(DialogInterface dialog, int whichButton)
                     {
                         Context context = null;
-                        Intent intent = new Intent (context.getApplicationContext(), Act3.class);
+                        Intent intent = new Intent (context.getApplicationContext(), Chapter3.class);
                         context.startActivity(intent);
                     }
                 })
@@ -54,11 +57,12 @@ public class Results extends AppCompatActivity implements View.OnClickListener
         return myQuittingDialogBox;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate (Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.results);
+        setContentView(R.layout.chapter3results);
         TvGrades = findViewById(R.id.TvGrades);
         TvWrongQue = findViewById(R.id.TvWrongQue);
         TvWrongAns = findViewById(R.id.TvWrongAns);
@@ -70,51 +74,52 @@ public class Results extends AppCompatActivity implements View.OnClickListener
         Intent intent = getIntent();
         Bundle box = intent.getExtras();
         Float Grades = box.getFloat("Points");
-            if (Grades >= 90.0)
-            {
-                Tvadvice.setText("Ήσουν ΑΡΙΣΤΟΣ!!! Συνέχισε την καλή δουλειά.");
-                TvStandardQue.setVisibility(View.INVISIBLE);
-                TvStandardAns.setVisibility(View.INVISIBLE);
-                TvWrongAns.setVisibility(View.INVISIBLE);
-                TvWrongQue.setVisibility(View.INVISIBLE);
+        if (Grades >= 90.0)
+        {
+            Tvadvice.setText("Ήσουν ΑΡΙΣΤΟΣ!!! Συνέχισε την καλή δουλειά.");
+            TvStandardQue.setVisibility(View.INVISIBLE);
+            TvStandardAns.setVisibility(View.INVISIBLE);
+            TvWrongAns.setVisibility(View.INVISIBLE);
+            TvWrongQue.setVisibility(View.INVISIBLE);
 
-            }
-            else if (Grades >= 75.0)
+        }
+        else if (Grades >= 75.0)
+        {
+            Tvadvice.setText("Τα πήγες αρκετά καλά όμως με λίγη προσπάθεια ακόμα μπορείς και καλύτερα!");
+        }
+        else if (Grades >= 50.0)
+        {
+            Tvadvice.setText("Με μεγάλη δυσκολία πέρασες την βάση, θες ακόμη αρκετή δουλεία.");
+        }
+        else
+        {
+            BtNextChapter.setVisibility(View.INVISIBLE);
+            Tvadvice.setText("Ήσουν πολύ κακός, πάτησε ΕΔΩ για να γυρίσεις πίσω και να διαβάσεις το κεφάλαιο από την αρχή.");
+            Tvadvice.setOnClickListener(new View.OnClickListener()
             {
-                Tvadvice.setText("Τα πήγες αρκετά καλά όμως με λίγη προσπάθεια ακόμα μπορείς και καλύτερα!");
-            }
-            else if (Grades >= 50.0)
-            {
-                Tvadvice.setText("Με μεγάλη δυσκολία πέρασες την βάση, θες ακόμη αρκετή δουλεία.");
-            }
-            else
-            {
-                BtNextChapter.setVisibility(View.INVISIBLE);
-                Tvadvice.setText("Ήσουν πολύ κακός, πάτησε ΕΔΩ για να γυρίσεις πίσω και να διαβάσεις το κεφάλαιο από την αρχή.");
-                Tvadvice.setOnClickListener(new View.OnClickListener()
+                @Override
+                public void onClick(View v)
                 {
-                    @Override
-                    public void onClick(View v)
-                    {
-                        Intent intent = new Intent(getApplicationContext(), Act2.class);
-                        startActivity(intent);
-                        Activity Act2 = null;
-                        Act2.startActivity(intent);
-                    }
-                });
-    }
+                    Intent intent = new Intent(getApplicationContext(), Chapter3.class);
+                    startActivity(intent);
+                    Activity Chapter2 = null;
+                    Chapter2.startActivity(intent);
+                }
+            });
+        }
         String grades = Float.toString(Grades);
         TvGrades.setText(grades + "%");
         String WrongQue = box.getString("WrongQue");
         TvWrongQue.setText(WrongQue);
+        TvWrongQue.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
         String WrongAns = box.getString("WrongAns");
         TvWrongAns.setText(WrongAns);
-}
+    }
 
     @Override
     public void onClick(View v)
     {
-        Intent intent = new Intent (getApplicationContext (),  Chapter2.class);
-        startActivity (intent);
+        // Intent intent = new Intent (getApplicationContext (),  Chapter3.class);
+        //startActivity (intent);
     }
 }

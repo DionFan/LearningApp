@@ -1,9 +1,12 @@
 package com.dfan.learningapp;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelStoreOwner;
 import android.content.DialogInterface;
+import android.graphics.text.LineBreaker;
+import android.os.Build;
 import android.os.CountDownTimer;
 import android.content.Intent;
 import android.graphics.Color;
@@ -35,7 +38,21 @@ public class Chapter2Que extends AppCompatActivity implements View.OnClickListen
     Drawable BackDraw;
     private LinearLayout linearLayout;
     private CircularCountDownBar mCountDownBar1;
+    static boolean active = false;
+
     @Override
+    public void onStart() {
+        super.onStart();
+        active = true;
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        active = false;
+    }
+    @Override
+
 
     public void onBackPressed() {
         AlertDialog diaBox = AskOption();
@@ -70,6 +87,7 @@ public class Chapter2Que extends AppCompatActivity implements View.OnClickListen
     {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.chapter2que);
+        System.out.println("***ARXH");
         findView();
         TvQueNumber = findViewById (R.id.TvQueNumber);
         TvQuestion = findViewById (R.id.TvQuestion);
@@ -89,11 +107,13 @@ public class Chapter2Que extends AppCompatActivity implements View.OnClickListen
         BtNext.setOnClickListener (this);
         BtStart.setOnClickListener(new View.OnClickListener()
         {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v)
             {
                 BtStart.setVisibility(View.INVISIBLE);
                 TvQuestion.setVisibility(View.VISIBLE);
+                TvQuestion.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
                 TvAnswers[0].setVisibility(View.VISIBLE);
                 TvAnswers[1].setVisibility(View.VISIBLE);
                 TvAnswers[2].setVisibility(View.VISIBLE);
@@ -102,16 +122,17 @@ public class Chapter2Que extends AppCompatActivity implements View.OnClickListen
                 BtOK.setVisibility(View.VISIBLE);
                 BtPrev.setVisibility(View.VISIBLE);
                 TvQueNumber.setVisibility(View.VISIBLE);
-                startCountDownTimertask(mCountDownBar1,120);
+                startCountDownTimertask(mCountDownBar1,60);
             }
         });
         BackDraw = TvAnswers[0].getBackground();
         AllQuests = Questionnaire.GetInstance (this, 2);
+        System.out.println("***Fortwsh Questionnaire");
         DoNext ();
         mCountDownBar1 = new CircularCountDownBar.Builder(this)
-                .setMaxProgress(120)
+                .setMaxProgress(60)
                 .setProgressColor(Color.GREEN)
-                .setTextColor(Color.WHITE)
+                .setTextColor(Color.RED)
                 .build();
         LinearLayout.LayoutParams params1 = new LinearLayout.LayoutParams(350,350);
         params1.gravity = Gravity.CENTER;
@@ -139,11 +160,20 @@ public class Chapter2Que extends AppCompatActivity implements View.OnClickListen
             @Override
             public void onFinish()
             {
-                Intent intent = new Intent (getApplicationContext (), Results.class);
-                intent.putExtra("Points", AllQuests.Success());
-                intent.putExtra("WrongQue", AllQuests.WrongQue());
-                intent.putExtra("WrongAns", AllQuests.WrongAns());
-                startActivity (intent);
+                if (Chapter2Que.active == false)
+                {
+                    System.out.println("***Dn kano tipota");
+                }
+                else
+                {
+                    System.out.println("***kano auto pou prepei");
+                    Intent intent = new Intent (getApplicationContext (), Chapter2Results.class);
+                    intent.putExtra("Points", AllQuests.Success());
+                    intent.putExtra("WrongQue", AllQuests.WrongQue());
+                    intent.putExtra("WrongAns", AllQuests.WrongAns());
+                    startActivity (intent);
+                }
+
             }
         }.start();
     }
@@ -179,10 +209,11 @@ public class Chapter2Que extends AppCompatActivity implements View.OnClickListen
 
     void DoNext ()
     {
+        System.out.println("***DoNext");
         CurQNum = AllQuests.GoNextUnAns ();
         if (CurQNum == -1)
         {
-            Intent intent = new Intent (getApplicationContext (), Results.class);
+            Intent intent = new Intent (getApplicationContext (), Chapter2Results.class);
             intent.putExtra("Points", AllQuests.Success());
             intent.putExtra("WrongQue", AllQuests.WrongQue());
             intent.putExtra("WrongAns", AllQuests.WrongAns());

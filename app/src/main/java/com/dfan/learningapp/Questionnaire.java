@@ -51,6 +51,7 @@ public class Questionnaire
         {
             try (BufferedReader BR = new BufferedReader (new InputStreamReader (AssMan.open ("Questionnaire1.txt"))))
             {
+                System.out.println ("*** Erwthmatologio 1");
                 System.out.println ("*** -----");
                 NoQ = Integer.parseInt (BR.readLine ());
                 for (int i = 0; i < NoQ; i++)
@@ -74,6 +75,7 @@ public class Questionnaire
         {
             try (BufferedReader BR = new BufferedReader (new InputStreamReader (AssMan.open ("Questionnaire2.txt"))))
             {
+                System.out.println ("*** Erwthmatologio 2");
                 System.out.println ("*** -----");
                 NoQ = Integer.parseInt (BR.readLine ());
                 for (int i = 0; i < NoQ; i++)
@@ -95,7 +97,27 @@ public class Questionnaire
         }
         else if(x==3)
         {
-
+            try (BufferedReader BR = new BufferedReader (new InputStreamReader (AssMan.open ("Questionnaire3.txt"))))
+            {
+                System.out.println ("*** Erwthmatologio 3");
+                System.out.println ("*** -----");
+                NoQ = Integer.parseInt (BR.readLine ());
+                for (int i = 0; i < NoQ; i++)
+                {
+                    System.out.println ("*** ///");
+                    Question Q = new Question ();
+                    Q.setQueText (BR.readLine ());
+                    int NoA = Integer.parseInt (BR.readLine ());
+                    Q.setCorrectAns (Integer.parseInt (BR.readLine ()));
+                    for (int j = 0; j < NoA; j++)
+                        Q.AddAnswer (BR.readLine ());
+                    Questions.add (Q);
+                }
+            }
+            catch (IOException e1)
+            {
+                System.err.println ("***Exception in Reading Database");
+            }
         }
 
     }

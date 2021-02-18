@@ -22,6 +22,20 @@ import com.dfan.coutdownbar.CircularCountDownBar;
 
 public class Act3 extends AppCompatActivity implements View.OnClickListener
 {
+    static boolean active = false;
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        active = true;
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        active = false;
+    }
+
     TextView TvQueNumber;
     TextView TvQuestion;
     TextView[] TvAnswers;
@@ -103,14 +117,14 @@ public class Act3 extends AppCompatActivity implements View.OnClickListener
                 BtOK.setVisibility(View.VISIBLE);
                 BtPrev.setVisibility(View.VISIBLE);
                 TvQueNumber.setVisibility(View.VISIBLE);
-                startCountDownTimertask(mCountDownBar1,120);
+                startCountDownTimertask(mCountDownBar1,60);
             }
         });
         BackDraw = TvAnswers[0].getBackground();
         AllQuests = Questionnaire.GetInstance (this, 1);
         DoNext ();
         mCountDownBar1 = new CircularCountDownBar.Builder(this)
-                .setMaxProgress(120)
+                .setMaxProgress(60)
                 .setProgressColor(Color.GREEN)
                 .setTextColor(Color.WHITE)
                 .build();
@@ -140,11 +154,20 @@ public class Act3 extends AppCompatActivity implements View.OnClickListener
             @Override
             public void onFinish()
             {
-                Intent intent = new Intent (getApplicationContext (), Results.class);
-                intent.putExtra("Points", AllQuests.Success());
-                intent.putExtra("WrongQue", AllQuests.WrongQue());
-                intent.putExtra("WrongAns", AllQuests.WrongAns());
-                startActivity (intent);
+                if (Act3.active == false)
+                {
+                    System.out.println("***Dn kano tipota");
+                }
+                else
+                {
+                    System.out.println("***kano auto pou prepei");
+                    Intent intent = new Intent (getApplicationContext (), Results.class);
+                    intent.putExtra("Points", AllQuests.Success());
+                    intent.putExtra("WrongQue", AllQuests.WrongQue());
+                    intent.putExtra("WrongAns", AllQuests.WrongAns());
+                    startActivity (intent);
+                }
+
             }
         }.start();
     }
