@@ -1,5 +1,6 @@
 package com.dfan.learningapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import androidx.annotation.NonNull;
@@ -18,9 +19,14 @@ public class Chapter2 extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Intent intent = getIntent();
+        Bundle box = intent.getExtras();
+        String Grades1 = box.getString("Points1");
+        System.out.println("***Chap2" + Grades1);
+        intent.putExtra("Points1", Grades1);
         setContentView(R.layout.chapter2);
         myViewPager2 = findViewById(R.id.viewpager);
-        MyAdapter2 = new MyAdapter2(this);
+        MyAdapter2 = new MyAdapter2(this, Grades1);
         myViewPager2.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL);
         myViewPager2.setAdapter(MyAdapter2);
         myViewPager2.setOffscreenPageLimit(3);

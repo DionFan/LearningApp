@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +23,8 @@ public class Chapter2Results extends AppCompatActivity implements View.OnClickLi
     TextView TvStandardQue;
     TextView TvStandardAns;
     Button BtNextChapter;
+    String grades;
+    String Grades1;
 
 
     public void onBackPressed()
@@ -61,6 +62,10 @@ public class Chapter2Results extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate (Bundle savedInstanceState)
     {
+        Intent intent = getIntent();
+        Bundle box = intent.getExtras();
+        String GradesQue = box.getString("Points1");
+        Grades1 = GradesQue;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chapter2results);
         TvGrades = findViewById(R.id.TvGrades);
@@ -71,9 +76,8 @@ public class Chapter2Results extends AppCompatActivity implements View.OnClickLi
         TvStandardQue = findViewById(R.id.TvStandardQue);
         BtNextChapter = findViewById(R.id.BtNextChapter);
         BtNextChapter.setOnClickListener(this);
-        Intent intent = getIntent();
-        Bundle box = intent.getExtras();
-        Float Grades = box.getFloat("Points");
+
+        Float Grades = box.getFloat("Points2");
         if (Grades >= 90.0)
         {
             Tvadvice.setText("Ήσουν ΑΡΙΣΤΟΣ!!! Συνέχισε την καλή δουλειά.");
@@ -107,7 +111,7 @@ public class Chapter2Results extends AppCompatActivity implements View.OnClickLi
                 }
             });
         }
-        String grades = Float.toString(Grades);
+        grades = Float.toString(Grades);
         TvGrades.setText(grades + "%");
         String WrongQue = box.getString("WrongQue");
         TvWrongQue.setText(WrongQue);
@@ -119,7 +123,12 @@ public class Chapter2Results extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View v)
     {
+        System.out.println("Chap 2 Results 1***"+ Grades1);
+        System.out.println("Chap 2 Results 2***"+ grades);
         Intent intent = new Intent (getApplicationContext (),  Chapter3.class);
+        System.out.println("Chapter2***" + grades);
+        intent.putExtra("Points2", grades);
+        intent.putExtra("Points1", Grades1);
         startActivity (intent);
     }
 }

@@ -21,6 +21,7 @@ public class Results extends AppCompatActivity implements View.OnClickListener
     TextView TvStandardQue;
     TextView TvStandardAns;
     Button BtNextChapter;
+    String grades;
 
 
     public void onBackPressed()
@@ -69,7 +70,7 @@ public class Results extends AppCompatActivity implements View.OnClickListener
         BtNextChapter.setOnClickListener(this);
         Intent intent = getIntent();
         Bundle box = intent.getExtras();
-        Float Grades = box.getFloat("Points");
+        Float Grades = box.getFloat("Points1");
             if (Grades >= 90.0)
             {
                 Tvadvice.setText("Ήσουν ΑΡΙΣΤΟΣ!!! Συνέχισε την καλή δουλειά.");
@@ -103,7 +104,7 @@ public class Results extends AppCompatActivity implements View.OnClickListener
                     }
                 });
     }
-        String grades = Float.toString(Grades);
+        grades = Float.toString(Grades);
         TvGrades.setText(grades + "%");
         String WrongQue = box.getString("WrongQue");
         TvWrongQue.setText(WrongQue);
@@ -115,6 +116,9 @@ public class Results extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v)
     {
         Intent intent = new Intent (getApplicationContext (),  Chapter2.class);
+        startActivity (intent);
+        System.out.println("Results 1***" + grades);
+        intent.putExtra("Points1", grades);
         startActivity (intent);
     }
 }

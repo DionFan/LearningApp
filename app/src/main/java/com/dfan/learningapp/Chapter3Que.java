@@ -39,6 +39,9 @@ public class Chapter3Que extends AppCompatActivity implements View.OnClickListen
         private LinearLayout linearLayout;
         private CircularCountDownBar mCountDownBar1;
         static boolean active = false;
+        String Grades1;
+        String Grades2;
+
 
         @Override
         public void onStart()
@@ -86,6 +89,14 @@ public class Chapter3Que extends AppCompatActivity implements View.OnClickListen
         @Override
         protected void onCreate (Bundle savedInstanceState)
         {
+         Intent intent = getIntent();
+         Bundle box = intent.getExtras();
+         String Gr1 = box.getString("Points1");
+         String Gr2 = box.getString("Points2");
+         Grades1 = Gr1;
+         Grades2 = Gr2;
+         System.out.println("***Chap3Que Grades 1" + Grades1);
+         System.out.println("***Chap3Que Grades 2" + Grades2);
         super.onCreate (savedInstanceState);
         setContentView (R.layout.chapter3que);
         System.out.println("***ARXH");
@@ -167,11 +178,15 @@ public class Chapter3Que extends AppCompatActivity implements View.OnClickListen
         }
         else
         {
+            System.out.println("***Chap3QueOnclick Grades1" + Grades1);
+            System.out.println("***Chap3QueOnclick Grades2" + Grades2);
             System.out.println("***kano auto pou prepei");
             Intent intent = new Intent (getApplicationContext (), Chapter3Results.class);
-            intent.putExtra("Points", AllQuests.Success());
+            intent.putExtra("Points3", AllQuests.Success());
             intent.putExtra("WrongQue", AllQuests.WrongQue());
             intent.putExtra("WrongAns", AllQuests.WrongAns());
+            intent.putExtra("Points2", Grades2);
+            intent.putExtra("Points1", Grades1);
             startActivity (intent);
         }
 
@@ -214,11 +229,15 @@ public class Chapter3Que extends AppCompatActivity implements View.OnClickListen
             CurQNum = AllQuests.GoNextUnAns ();
         if (CurQNum == -1)
         {
-                Intent intent = new Intent (getApplicationContext (), Chapter3Results.class);
-                intent.putExtra("Points", AllQuests.Success());
-                intent.putExtra("WrongQue", AllQuests.WrongQue());
-                intent.putExtra("WrongAns", AllQuests.WrongAns());
-                startActivity (intent);
+            System.out.println("***Chap3QueOnclick Grades1" + Grades1);
+            System.out.println("***Chap3QueOnclick Grades2" + Grades2);
+            Intent intent = new Intent (getApplicationContext (), Chapter3Results.class);
+            intent.putExtra("Points3", AllQuests.Success());
+            intent.putExtra("WrongQue", AllQuests.WrongQue());
+            intent.putExtra("WrongAns", AllQuests.WrongAns());
+            intent.putExtra("Points2", Grades2);
+            intent.putExtra("Points1", Grades1);
+            startActivity (intent);
         }
         else
         {

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.text.LineBreaker;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -22,11 +23,20 @@ import android.widget.ImageView;
 
 public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> implements View.OnClickListener
 {
+    String grades1;
+    String grades2;
 
     private Context context;
 
-    public MyAdapter3(Context context)
+    public MyAdapter3(Context context, String x, String y)
     {
+
+        //Intent intent = null;
+        System.out.println("***MyAdapter3 Grades 2"+ x);
+        System.out.println("***MyAdapter3 Grades 1"+ y);
+        //intent.putExtra("Points2", x);
+        grades1 = y;
+        grades2 = x;
         this.context = context;
     }
 
@@ -37,6 +47,7 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> im
     {
         View view = LayoutInflater.from(context).inflate(R.layout.myadapter3, parent, false);
         return new MyAdapter3.MyViewHolder(view);
+
     }
 
     @SuppressLint("ResourceAsColor")
@@ -106,7 +117,6 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> im
             holder.Tvlesson.setVisibility(View.VISIBLE);
             holder.Tvlesson2.setVisibility(View.INVISIBLE);
             holder.Tvlesson3.setVisibility(View.INVISIBLE);
-
         }
         else if (position == 4)
         {
@@ -127,7 +137,11 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> im
                 {
                     System.out.println("***EDW1");
                     Intent intent = new Intent(context.getApplicationContext(), Chapter3Que.class);
+                    intent.putExtra("Points2", grades2);
+                    intent.putExtra("Points1", grades1);
                     context.startActivity(intent);
+                    System.out.println("***MyAdapter3Onclick Grades 2" + grades2);
+                    System.out.println("***MyAdapter3Onclick Grades 1" + grades1);
                     Activity Chapter3Que = null;
                     Chapter3Que.startActivity(intent);
                 }
@@ -167,8 +181,10 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> im
         ImageView Ivaerostata;
 
 
+
         public MyViewHolder(@NonNull View itemView)
         {
+
             super(itemView);
             TvChap = itemView.findViewById(R.id.TvChap);
             Tvlesson = itemView.findViewById(R.id.Tvlesson);

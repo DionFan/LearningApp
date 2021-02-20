@@ -26,8 +26,6 @@
         <activity android:name="com.dfan.learningapp.Chapter3"></activity>
         <activity android:name="com.dfan.learningapp.Chapter3Que"></activity>
         <activity android:name="com.dfan.learningapp.Chapter3Results"></activity>
+        <activity android:name="com.dfan.learningapp.FinalResultsSection1"></activity>
     </application>
-
-
-
 </manifest>

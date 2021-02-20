@@ -22,10 +22,14 @@ import android.widget.ImageView;
 
 public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> implements View.OnClickListener
 {
+    String grades1;
+
     private Context context;
 
-    public MyAdapter2(Context context)
+    public MyAdapter2(Context context, String x)
     {
+        System.out.println("***MyAdapter2"+ x);
+        grades1 = x;
         this.context = context;
     }
 
@@ -132,6 +136,7 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> im
                     //Intent intent = new Intent (context.getApplicationContext(), Chapter2Que.class);
                     //context.startActivity(intent);
                     Intent intent = new Intent(context.getApplicationContext(), Chapter2Que.class);
+                    intent.putExtra("Points1", grades1);
                     context.startActivity(intent);
                     Activity Chapter2Que = null;
                     Chapter2Que.startActivity(intent);

@@ -162,7 +162,7 @@ public class Act3 extends AppCompatActivity implements View.OnClickListener
                 {
                     System.out.println("***kano auto pou prepei");
                     Intent intent = new Intent (getApplicationContext (), Results.class);
-                    intent.putExtra("Points", AllQuests.Success());
+                    intent.putExtra("Points1", AllQuests.Success());
                     intent.putExtra("WrongQue", AllQuests.WrongQue());
                     intent.putExtra("WrongAns", AllQuests.WrongAns());
                     startActivity (intent);
@@ -207,7 +207,7 @@ public class Act3 extends AppCompatActivity implements View.OnClickListener
         if (CurQNum == -1)
         {
             Intent intent = new Intent (getApplicationContext (), Results.class);
-            intent.putExtra("Points", AllQuests.Success());
+            intent.putExtra("Points1", AllQuests.Success());
             intent.putExtra("WrongQue", AllQuests.WrongQue());
             intent.putExtra("WrongAns", AllQuests.WrongAns());
             startActivity (intent);

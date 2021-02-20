@@ -24,7 +24,10 @@ public class Chapter3Results extends AppCompatActivity implements View.OnClickLi
     TextView TvStandardQue;
     TextView TvStandardAns;
     Button BtNextChapter;
-
+    String grades;
+    private Questionnaire AllQuests;
+    String Grades2;
+    String Grades1;
 
     public void onBackPressed()
     {
@@ -61,6 +64,12 @@ public class Chapter3Results extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate (Bundle savedInstanceState)
     {
+        Intent intent = getIntent();
+        Bundle box = intent.getExtras();
+        String GradesQue1 = box.getString("Points1");
+        String GradesQue2 = box.getString("Points2");
+        Grades1 = GradesQue1;
+        Grades2 = GradesQue2;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chapter3results);
         TvGrades = findViewById(R.id.TvGrades);
@@ -71,9 +80,9 @@ public class Chapter3Results extends AppCompatActivity implements View.OnClickLi
         TvStandardQue = findViewById(R.id.TvStandardQue);
         BtNextChapter = findViewById(R.id.BtNextChapter);
         BtNextChapter.setOnClickListener(this);
-        Intent intent = getIntent();
-        Bundle box = intent.getExtras();
-        Float Grades = box.getFloat("Points");
+
+
+        Float Grades = box.getFloat("Points3");
         if (Grades >= 90.0)
         {
             Tvadvice.setText("Ήσουν ΑΡΙΣΤΟΣ!!! Συνέχισε την καλή δουλειά.");
@@ -107,7 +116,7 @@ public class Chapter3Results extends AppCompatActivity implements View.OnClickLi
                 }
             });
         }
-        String grades = Float.toString(Grades);
+        grades = Float.toString(Grades);
         TvGrades.setText(grades + "%");
         String WrongQue = box.getString("WrongQue");
         TvWrongQue.setText(WrongQue);
@@ -119,7 +128,13 @@ public class Chapter3Results extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View v)
     {
-        // Intent intent = new Intent (getApplicationContext (),  Chapter3.class);
-        //startActivity (intent);
+        System.out.println("1***"+ Grades1);
+        System.out.println("2***"+ Grades2);
+        System.out.println("3***"+ grades);
+        Intent intent = new Intent (getApplicationContext (),  FinalResultsSection1.class);
+        intent.putExtra("Points3", grades);
+        intent.putExtra("Points2", Grades2);
+        intent.putExtra("Points1", Grades1);
+        startActivity (intent);
     }
 }
