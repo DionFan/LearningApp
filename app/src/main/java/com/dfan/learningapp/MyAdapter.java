@@ -1,5 +1,6 @@
 package com.dfan.learningapp;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.text.LineBreaker;
@@ -130,8 +131,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
                 @Override
                 public void onClick(View v)
                 {
-                    Intent intent = new Intent (context.getApplicationContext(), Act3.class);
+                    //Intent intent = new Intent (context.getApplicationContext(), Act3.class);
+                    //context.startActivity(intent);
+                    Intent intent = new Intent(context.getApplicationContext(), Act3.class);
                     context.startActivity(intent);
+                    Activity Act3 = null;
+                    Act3.startActivity(intent);
                 }
             });
             holder.BtTest.setVisibility(View.INVISIBLE);

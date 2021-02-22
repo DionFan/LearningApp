@@ -26,7 +26,6 @@ public class Chapter2Results extends AppCompatActivity implements View.OnClickLi
     String grades;
     String Grades1;
 
-
     public void onBackPressed()
     {
         AlertDialog diaBox = AskOption();
@@ -104,6 +103,8 @@ public class Chapter2Results extends AppCompatActivity implements View.OnClickLi
                 @Override
                 public void onClick(View v)
                 {
+                    //Intent intent = new Intent (getApplicationContext (), Chapter2.class);
+                    //startActivity (intent);
                     Intent intent = new Intent(getApplicationContext(), Chapter2.class);
                     startActivity(intent);
                     Activity Chapter2 = null;
