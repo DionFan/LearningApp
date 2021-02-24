@@ -220,6 +220,7 @@ public class Chapter2Que extends AppCompatActivity implements View.OnClickListen
         CurQNum = AllQuests.GoNextUnAns ();
         if (CurQNum == -1)
         {
+            //finish();
             System.out.println("***Chap2QueOnclick" + Grades1);
             Intent intent = new Intent (getApplicationContext (), Chapter2Results.class);
             intent.putExtra("Points2", AllQuests.Success());

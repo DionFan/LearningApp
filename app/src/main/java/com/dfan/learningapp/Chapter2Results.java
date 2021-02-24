@@ -61,8 +61,8 @@ public class Chapter2Results extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate (Bundle savedInstanceState)
     {
-        Intent intent = getIntent();
-        Bundle box = intent.getExtras();
+        Intent in = getIntent();
+        Bundle box = in.getExtras();
         String GradesQue = box.getString("Points1");
         Grades1 = GradesQue;
         super.onCreate(savedInstanceState);
@@ -103,12 +103,33 @@ public class Chapter2Results extends AppCompatActivity implements View.OnClickLi
                 @Override
                 public void onClick(View v)
                 {
-                    //Intent intent = new Intent (getApplicationContext (), Chapter2.class);
-                    //startActivity (intent);
-                    Intent intent = new Intent(getApplicationContext(), Chapter2.class);
+                    Intent intent = new Intent (Chapter2Results.this, Chapter2.class);
+                    startActivity (intent);
+                    /*Context context = null;
+                    Intent intent = new Intent (context.getApplicationContext(), Chapter2.class);
+                    context.startActivity(intent);*/
+                    //
+                    /*Intent intent = new Intent(getApplicationContext(), Chapter2.class);
                     startActivity(intent);
                     Activity Chapter2 = null;
                     Chapter2.startActivity(intent);
+                    System.out.println("***ΔΕΝ ΞΕΚΙΝΑΕΙ");*/
+                    //finish();
+                    /*Intent intent2 = new Intent(Chapter2Results.this, Chapter2.class);
+
+                    intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                    startActivity(intent2);*/
+                    /*Intent myIntent = new Intent(v.getContext(), Chapter2.class);
+                    //Intent i = new Intent(this, Chapter2.class);
+                    myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(myIntent);*/
+                    /*Intent intent = new Intent(Chapter2Results.this, Chapter2.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP |
+                            Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                    startActivity(intent);*/
+                    //finish();
                 }
             });
         }

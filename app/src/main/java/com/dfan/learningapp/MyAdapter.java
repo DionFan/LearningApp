@@ -120,6 +120,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
             holder.tvName.setText(R.string.screen1);
             holder.tvName.setTextColor(Color.BLUE);
             holder.tvName.setBackgroundColor(Color.WHITE);
+            holder.TvChap.setText(R.string.screen2);
+            holder.TvChap.setTextColor(Color.GREEN);
+            holder.Tvlesson.setText(R.string.screen1_6);
+            holder.Tvlesson.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
+        }
+        else if (position == 5)
+        {
+            holder.tvName.setText(R.string.screen1);
+            holder.tvName.setTextColor(Color.BLUE);
+            holder.tvName.setBackgroundColor(Color.WHITE);
             holder.TvChap.setText(R.string.test);
             holder.TvChap.setTextColor(Color.MAGENTA);
             holder.TvChap.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
@@ -157,7 +167,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
     @Override
     public int getItemCount()
     {
-        return 5;
+        return 6;
     }
 
     @Override

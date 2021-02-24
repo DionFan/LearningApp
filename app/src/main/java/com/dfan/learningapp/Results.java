@@ -116,7 +116,7 @@ public class Results extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v)
     {
         Intent intent = new Intent (getApplicationContext (),  Chapter2.class);
-        startActivity (intent);
+        //startActivity (intent);
         System.out.println("Results 1***" + grades);
         intent.putExtra("Points1", grades);
         startActivity (intent);

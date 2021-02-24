@@ -11,21 +11,45 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LearningApp">
-        <activity android:name="com.dfan.learningapp.MainActivity">
+        <activity android:name="com.dfan.learningapp.MainActivity"
+                  android:configChanges="orientation"
+                  android:screenOrientation="portrait">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="com.dfan.learningapp.Act2"></activity>
-        <activity android:name="com.dfan.learningapp.Act3"></activity>
-        <activity android:name="com.dfan.learningapp.Results"></activity>
-        <activity android:name="com.dfan.learningapp.Chapter2"></activity>
-        <activity android:name="com.dfan.learningapp.Chapter2Que"></activity>
-        <activity android:name="com.dfan.learningapp.Chapter2Results"></activity>
-        <activity android:name="com.dfan.learningapp.Chapter3"></activity>
-        <activity android:name="com.dfan.learningapp.Chapter3Que"></activity>
-        <activity android:name="com.dfan.learningapp.Chapter3Results"></activity>
-        <activity android:name="com.dfan.learningapp.FinalResultsSection1"></activity>
+        <activity android:name="com.dfan.learningapp.Act2"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="com.dfan.learningapp.Act3"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="com.dfan.learningapp.Results"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="com.dfan.learningapp.Chapter2"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="com.dfan.learningapp.Chapter2Que"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:noHistory="true"></activity>
+        <activity android:name="com.dfan.learningapp.Chapter2Results"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="com.dfan.learningapp.Chapter3"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="com.dfan.learningapp.Chapter3Que"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="com.dfan.learningapp.Chapter3Results"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="com.dfan.learningapp.FinalResultsSection1"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
     </application>
 </manifest>
