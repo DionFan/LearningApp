@@ -68,11 +68,22 @@
         android:id="@+id/Ivaerostata"
         android:layout_width="399dp"
         android:layout_height="264dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="32dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TvChap"
+        app:layout_constraintTop_toTopOf="@+id/tvName"
         app:srcCompat="@drawable/aerostata" />
+
+    <TextView
+        android:id="@+id/TvLessonNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="TextView"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

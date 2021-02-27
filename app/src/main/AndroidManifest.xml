@@ -51,5 +51,35 @@
         <activity android:name="com.dfan.learningapp.FinalResultsSection1"
             android:configChanges="orientation"
             android:screenOrientation="portrait"></activity>
+        <activity android:name="com.dfan.learningapp.Hist1"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="com.dfan.learningapp.Histres1"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="com.dfan.learningapp.Histque1"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="com.dfan.learningapp.Hist2"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="com.dfan.learningapp.Histres2"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="com.dfan.learningapp.Histque2"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="com.dfan.learningapp.Hist3"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="com.dfan.learningapp.Histres3"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="com.dfan.learningapp.Histque3"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="com.dfan.learningapp.FinalResultsSection2"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
     </application>
 </manifest>

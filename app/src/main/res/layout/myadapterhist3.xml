@@ -8,6 +8,13 @@
     android:orientation="vertical"
     android:scrollbarAlwaysDrawVerticalTrack="true">
 
+    <!--<ImageView
+        android:id="@+id/imgBanner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"
+        android:contentDescription="@string/app_name" />-->
+
     <TextView
         android:id="@+id/tvName"
         android:layout_width="match_parent"
@@ -62,44 +69,63 @@
         android:id="@+id/TvVideo1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="3dp"
-        android:text="(YouTube) Η γλώσσα των νέων στην Διαφήμιση"
+        android:layout_marginTop="32dp"
+        android:text="Για την σημασία της εποχής αυτής, θα βρείτε περισσότερες πληροφορίες πατώντας εδώ "
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Tvlesson2" />
+        app:layout_constraintTop_toBottomOf="@+id/Tvlesson" />
+
+    <TextView
+        android:id="@+id/TvVideo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Σχετικά με τον ορισμό μπορείτε κάνοντας κλικ πάνω σε αυτό να βρείτε και άλλες πληροφορίες"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/IvVavelTower"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Tvlesson" />
+
 
     <TextView
         android:id="@+id/Tvlesson2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="10sp"
+        android:textStyle="italic"
         android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Ivargo" />
-
-    <ImageView
-        android:id="@+id/Ivargo"
-        android:layout_width="393dp"
-        android:layout_height="271dp"
-        android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@+id/TvChap"
-        app:srcCompat="@drawable/argo"
-        tools:layout_editor_absoluteX="0dp"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/Tvlesson3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TvVideo1"
+        app:layout_constraintTop_toBottomOf="@+id/Ivapoik2"
         tools:visibility="invisible" />
 
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="408dp"
+        app:barrierDirection="top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="602dp" />
+
+    <ImageView
+        android:id="@+id/Ivapoik2"
+        android:layout_width="412dp"
+        android:layout_height="293dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TvNewLesson"
+        app:srcCompat="@drawable/ap" />
+
     <TextView
-        android:id="@+id/TvlessonNew2"
+        android:id="@+id/TvNewLesson"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -108,5 +134,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

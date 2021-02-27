@@ -119,6 +119,78 @@ public class Questionnaire
                 System.err.println ("***Exception in Reading Database");
             }
         }
+        else if(x==4)
+        {
+            try (BufferedReader BR = new BufferedReader (new InputStreamReader (AssMan.open ("Questionnaire4.txt"))))
+            {
+                System.out.println ("*** Erwthmatologio 4");
+                System.out.println ("*** -----");
+                NoQ = Integer.parseInt (BR.readLine ());
+                for (int i = 0; i < NoQ; i++)
+                {
+                    System.out.println ("*** ///");
+                    Question Q = new Question ();
+                    Q.setQueText (BR.readLine ());
+                    int NoA = Integer.parseInt (BR.readLine ());
+                    Q.setCorrectAns (Integer.parseInt (BR.readLine ()));
+                    for (int j = 0; j < NoA; j++)
+                        Q.AddAnswer (BR.readLine ());
+                    Questions.add (Q);
+                }
+            }
+            catch (IOException e1)
+            {
+                System.err.println ("***Exception in Reading Database");
+            }
+        }
+        else if(x==5)
+        {
+            try (BufferedReader BR = new BufferedReader (new InputStreamReader (AssMan.open ("Questionnaire5.txt"))))
+            {
+                System.out.println ("*** Erwthmatologio 5");
+                System.out.println ("*** -----");
+                NoQ = Integer.parseInt (BR.readLine ());
+                for (int i = 0; i < NoQ; i++)
+                {
+                    System.out.println ("*** ///");
+                    Question Q = new Question ();
+                    Q.setQueText (BR.readLine ());
+                    int NoA = Integer.parseInt (BR.readLine ());
+                    Q.setCorrectAns (Integer.parseInt (BR.readLine ()));
+                    for (int j = 0; j < NoA; j++)
+                        Q.AddAnswer (BR.readLine ());
+                    Questions.add (Q);
+                }
+            }
+            catch (IOException e1)
+            {
+                System.err.println ("***Exception in Reading Database");
+            }
+        }
+        else if(x==6)
+        {
+            try (BufferedReader BR = new BufferedReader (new InputStreamReader (AssMan.open ("Questionnaire6.txt"))))
+            {
+                System.out.println ("*** Erwthmatologio 6");
+                System.out.println ("*** -----");
+                NoQ = Integer.parseInt (BR.readLine ());
+                for (int i = 0; i < NoQ; i++)
+                {
+                    System.out.println ("*** ///");
+                    Question Q = new Question ();
+                    Q.setQueText (BR.readLine ());
+                    int NoA = Integer.parseInt (BR.readLine ());
+                    Q.setCorrectAns (Integer.parseInt (BR.readLine ()));
+                    for (int j = 0; j < NoA; j++)
+                        Q.AddAnswer (BR.readLine ());
+                    Questions.add (Q);
+                }
+            }
+            catch (IOException e1)
+            {
+                System.err.println ("***Exception in Reading Database");
+            }
+        }
 
     }
 

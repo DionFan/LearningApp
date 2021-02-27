@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.text.LineBreaker;
 import android.net.Uri;
 import android.os.Build;
+import android.text.Html;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -57,21 +58,24 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
         }
         else if (position == 1)
         {
-            holder.tvName.setText(R.string.screen1);
-            holder.tvName.setTextColor(Color.BLUE);
-            holder.tvName.setBackgroundColor(Color.WHITE);
-            holder.TvChap.setVisibility(View.VISIBLE);
-            holder.TvChap.setText(R.string.screen1_2);
-            holder.TvChap.setTextColor(Color.GREEN);
+            //holder.tvName.setText(R.string.screen1);
+            //holder.tvName.setTextColor(Color.BLUE);
+            //holder.tvName.setBackgroundColor(Color.WHITE);
+            holder.tvName.setVisibility(View.INVISIBLE);
+            //holder.TvChap.setVisibility(View.VISIBLE);
+            //holder.TvChap.setText(R.string.screen1_2);
+            //holder.TvChap.setTextColor(Color.GREEN);
+            holder.TvChap.setVisibility(View.INVISIBLE);
             holder.Tvlesson.setText(R.string.screen1_4);
             holder.Tvlesson.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
             holder.Ivagnostes.setVisibility(View.VISIBLE);
         }
         else if (position == 2)
         {
-            holder.tvName.setText(R.string.screen1);
-            holder.tvName.setTextColor(Color.BLUE);
-            holder.tvName.setBackgroundColor(Color.WHITE);
+            //holder.tvName.setText(R.string.screen1);
+            //holder.tvName.setTextColor(Color.BLUE);
+            //holder.tvName.setBackgroundColor(Color.WHITE);
+            holder.tvName.setVisibility(View.INVISIBLE);
             holder.TvChap.setText(R.string.screen2);
             holder.TvChap.setTextColor(Color.GREEN);
             holder.Tvlesson.setText(R.string.screen2_1);
@@ -106,31 +110,40 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
         }
         else if (position == 3)
         {
-            holder.tvName.setText(R.string.screen1);
-            holder.tvName.setTextColor(Color.BLUE);
-            holder.tvName.setBackgroundColor(Color.WHITE);
-            holder.TvChap.setText(R.string.screen2);
-            holder.TvChap.setTextColor(Color.GREEN);
-            holder.Tvlesson.setText(R.string.screen3);
-            holder.Tvlesson.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
+            //holder.tvName.setText(R.string.screen1);
+            //holder.tvName.setTextColor(Color.BLUE);
+            //holder.tvName.setBackgroundColor(Color.WHITE);
+            holder.tvName.setVisibility(View.INVISIBLE);
+            //holder.TvChap.setText(R.string.screen2);
+            //holder.TvChap.setTextColor(Color.GREEN);
+            holder.TvChap.setVisibility(View.INVISIBLE);
+            holder.TvlessonNew.setText(R.string.screen3);
+            holder.TvlessonNew.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
+            holder.TvlessonNew.setVisibility(View.VISIBLE);
+            holder.Tvlesson.setVisibility(View.INVISIBLE);
 
         }
         else if (position == 4)
         {
-            holder.tvName.setText(R.string.screen1);
-            holder.tvName.setTextColor(Color.BLUE);
-            holder.tvName.setBackgroundColor(Color.WHITE);
-            holder.TvChap.setText(R.string.screen2);
-            holder.TvChap.setTextColor(Color.GREEN);
-            holder.Tvlesson.setText(R.string.screen1_6);
-            holder.Tvlesson.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
+            //holder.tvName.setText(R.string.screen1);
+            //holder.tvName.setTextColor(Color.BLUE);
+            //holder.tvName.setBackgroundColor(Color.WHITE);
+            holder.tvName.setVisibility(View.INVISIBLE);
+            //holder.TvChap.setText(R.string.screen2);
+            //holder.TvChap.setTextColor(Color.GREEN);
+            holder.TvChap.setVisibility(View.INVISIBLE);
+            holder.TvlessonNew.setVisibility(View.VISIBLE);
+            holder.TvlessonNew.setText(R.string.screen1_6);
+            holder.TvlessonNew.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
+            holder.Tvlesson.setVisibility(View.INVISIBLE);
+            holder.Ivle3ilogio.setVisibility(View.VISIBLE);
         }
         else if (position == 5)
         {
             holder.tvName.setText(R.string.screen1);
             holder.tvName.setTextColor(Color.BLUE);
             holder.tvName.setBackgroundColor(Color.WHITE);
-            holder.TvChap.setText(R.string.test);
+            //holder.TvChap.setText(R.string.test);
             holder.TvChap.setTextColor(Color.MAGENTA);
             holder.TvChap.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
             holder.Tvlesson.setVisibility(View.VISIBLE);
@@ -149,6 +162,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
                     Act3.startActivity(intent);
                 }
             });
+            String first = "Η θεωρία για το πρώτο κεφάλαιο τέλειωσε, αν είστε έτοιμος πατήστε ";
+            String lats = " για να ξεκινήσει το TEST σας!";
+            String next = "<font color='#EE0000'>«ΕΔΩ»</font>";
+            holder.TvChap.setText(Html.fromHtml(first + next + lats));
             holder.BtTest.setVisibility(View.INVISIBLE);
             holder.Tvlesson.setVisibility(View.VISIBLE);
             holder.Tvlesson.setText(R.string.askhsh1);
@@ -187,6 +204,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
         ImageView IvVavelTower;
         ImageView Ivagnostes;
         Button BtTest;
+        TextView TvlessonNew;
+        ImageView Ivle3ilogio;
 
 
         public MyViewHolder(@NonNull View itemView)
@@ -201,6 +220,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
             TvVideo2 = itemView.findViewById(R.id.TvVideo2);
             Tvlesson = itemView.findViewById(R.id.Tvlesson);
             Tvlesson2 = itemView.findViewById(R.id.Tvlesson2);
+            TvlessonNew = itemView.findViewById(R.id.TvlessonNew);
+            Ivle3ilogio = itemView.findViewById(R.id.Ivle3ilogio);
             tvName = itemView.findViewById(R.id.tvName);
             BtTest = itemView.findViewById(R.id.BtTest);
             BtTest.setOnClickListener((new View.OnClickListener ()
