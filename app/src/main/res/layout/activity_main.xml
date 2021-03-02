@@ -50,7 +50,7 @@
         android:layout_marginTop="150dp"
         android:layout_marginBottom="32dp"
         android:text="Έκθεση"
-        android:background="@color/teal_200"
+        android:background="#43A047"
         app:layout_constraintBottom_toTopOf="@+id/Bt2Lesson"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

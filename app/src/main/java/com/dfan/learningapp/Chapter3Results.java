@@ -103,7 +103,7 @@ public class Chapter3Results extends AppCompatActivity implements View.OnClickLi
         else
         {
             BtNextChapter.setVisibility(View.INVISIBLE);
-            Tvadvice.setText("Ήσουν πολύ κακός, πάτησε ΕΔΩ για να γυρίσεις πίσω και να διαβάσεις το κεφάλαιο από την αρχή.");
+            Tvadvice.setText("Ήσουν πολύ κακός, πάτησε ΕΔΩ για να γυρίσεις πίσω και να κάνεις το TEST από την αρχή.");
             Tvadvice.setOnClickListener(new View.OnClickListener()
             {
                 @Override
@@ -111,8 +111,8 @@ public class Chapter3Results extends AppCompatActivity implements View.OnClickLi
                 {
                     Intent intent = new Intent(getApplicationContext(), Chapter3.class);
                     startActivity(intent);
-                    Activity Chapter2 = null;
-                    Chapter2.startActivity(intent);
+                    //Activity Chapter2 = null;
+                    //Chapter2.startActivity(intent);
                 }
             });
         }

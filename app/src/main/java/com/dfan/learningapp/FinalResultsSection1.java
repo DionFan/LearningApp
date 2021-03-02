@@ -35,9 +35,7 @@ public class FinalResultsSection1 extends AppCompatActivity implements View.OnCl
                 {
                     public void onClick(DialogInterface dialog, int whichButton)
                     {
-                        Context context = null;
-                        Intent intent = new Intent (context.getApplicationContext(), Chapter2.class);
-                        context.startActivity(intent);
+                        finish();
                     }
                 })
                 .setNegativeButton("No", new DialogInterface.OnClickListener()

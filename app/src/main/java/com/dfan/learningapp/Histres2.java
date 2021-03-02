@@ -96,7 +96,7 @@ public class Histres2 extends AppCompatActivity implements View.OnClickListener
             else
             {
                 BtNextChapter.setVisibility(View.INVISIBLE);
-                Tvadvice.setText("Ήσουν πολύ κακός, πάτησε ΕΔΩ για να γυρίσεις πίσω και να διαβάσεις το κεφάλαιο από την αρχή.");
+                Tvadvice.setText("Ήσουν πολύ κακός, πάτησε ΕΔΩ για να γυρίσεις πίσω και να κάνεις το TEST από την αρχή.");
                 Tvadvice.setOnClickListener(new View.OnClickListener()
                 {
                     @Override

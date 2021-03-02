@@ -45,7 +45,7 @@ public class Histres3 extends AppCompatActivity implements View.OnClickListener
                     public void onClick(DialogInterface dialog, int whichButton)
                     {
                         Context context = null;
-                        Intent intent = new Intent (context.getApplicationContext(), Hist2.class);
+                        Intent intent = new Intent (context.getApplicationContext(), Hist3.class);
                         context.startActivity(intent);
                     }
                 })
