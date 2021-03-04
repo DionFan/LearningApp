@@ -60,7 +60,6 @@ public class FinalResultsSection2 extends AppCompatActivity implements View.OnCl
         IvOK.setOnClickListener(this);
         Intent intent = getIntent();
         Bundle box = intent.getExtras();
-        //Float Grades1 = box.getFloat("Points1");
         String Grades1 = box.getString("Points1");
         String Grades2 = box.getString("Points2");
         String Grades3 = box.getString("Points3");

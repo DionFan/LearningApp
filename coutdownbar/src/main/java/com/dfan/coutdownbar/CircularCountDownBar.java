@@ -65,21 +65,12 @@ public class CircularCountDownBar extends View {
             return this;
         }
 
-        /**
-         * Toggle this if you don't want rounded corners on circular count down progress.
-         * Default is true.
-         * @param drawTextEnable true if you want to show count down text of false otherwise.
-         */
+
         public Builder setDrawText(boolean drawTextEnable) {
             mDrawText = drawTextEnable;
             return this;
         }
 
-        /**
-         * Toggle this if you don't want rounded corners on circular count down progress.
-         * Default is true.
-         * @param roundedCorners true if you want rounded corners of false otherwise.
-         */
         public Builder setRoundedCorners(boolean roundedCorners) {
             mRoundedCorners = roundedCorners;
             return this;
@@ -176,12 +167,6 @@ public class CircularCountDownBar extends View {
         setupBounds();
     }
 
-    /**
-     * Set the properties of the paints
-     *
-     * we're using to
-     * draw the progress wheel
-     */
     private void setupPaints() {
         mCircularPaint.setColor(mProgressColor);
         mCircularPaint.setStrokeWidth(mStrokeWidth);
@@ -198,9 +183,6 @@ public class CircularCountDownBar extends View {
 
     }
 
-    /**
-     * Set the bounds of the component
-     */
     private void setupBounds() {
         final int diameter = Math.min(mViewWidth, mViewHeight) - (mStrokeWidth * 2);
         outerOval= new RectF(mStrokeWidth + paddingLeft, mStrokeWidth + paddingTop, diameter-paddingRight, diameter-paddingBottom);
@@ -231,28 +213,15 @@ public class CircularCountDownBar extends View {
         canvas.drawText(calcProgressFromSweepAngle(mSweepAngle) + "s", xPos, yPos, mSecondPaint);
     }
 
-    /**
-     * Exchange progress(time seconds) to angle
-     * @param progress time seconds unit
-     * @return angle
-     */
     private float calcSweepAngleFromProgress(int progress) {
         return (mMaxSweepAngle / mMaxProgress) * progress;
     }
 
-    /**
-     * Exchange sweepAngle to progress(time seconds)
-     * @param sweepAngle
-     * @return progress time seconds unit
-     */
     private int calcProgressFromSweepAngle(float sweepAngle) {
         return (int) ((sweepAngle * mMaxProgress) / mMaxSweepAngle);
     }
 
-    /**
-     * Set progress of the circular progress bar.
-     * @param progress progress between 0 and 100.
-     */
+
     public void setProgress(int progress) {
         ValueAnimator animator = ValueAnimator.ofFloat(mSweepAngle, calcSweepAngleFromProgress(progress));
         animator.setInterpolator(new DecelerateInterpolator());

@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Tvintro = (TextView) findViewById (R.id.TVintro);
         Tvintro.setBackgroundResource(android.R.color.transparent);
         Bt1lesson = (Button) findViewById(R.id.Bt1Lesson);
-        //Bt1lesson.setBackgroundColor(Color.WHITE);
         Bt2lesson = (Button) findViewById(R.id.Bt2Lesson);
         Bt2lesson.setBackgroundColor(Color.YELLOW);
         Bt1lesson.setOnClickListener(new View.OnClickListener()

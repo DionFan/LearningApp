@@ -111,8 +111,6 @@ public class Chapter3Results extends AppCompatActivity implements View.OnClickLi
                 {
                     Intent intent = new Intent(getApplicationContext(), Chapter3.class);
                     startActivity(intent);
-                    //Activity Chapter2 = null;
-                    //Chapter2.startActivity(intent);
                 }
             });
         }

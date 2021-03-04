@@ -42,7 +42,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position)
     {
-        //holder.tvName.setText(String.format("Page  %d ", position + 1));
         boolean start = false;
         if (position == 0)
         {
@@ -54,17 +53,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
             holder.Tvlesson.setText(R.string.screen1_3);
             holder.Tvlesson.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
             holder.IvVavelTower.setVisibility(View.VISIBLE);
-            //TvChap.setVisibility(View.VISIBLE);
         }
         else if (position == 1)
         {
-            //holder.tvName.setText(R.string.screen1);
-            //holder.tvName.setTextColor(Color.BLUE);
-            //holder.tvName.setBackgroundColor(Color.WHITE);
             holder.tvName.setVisibility(View.INVISIBLE);
-            //holder.TvChap.setVisibility(View.VISIBLE);
-            //holder.TvChap.setText(R.string.screen1_2);
-            //holder.TvChap.setTextColor(Color.GREEN);
             holder.TvChap.setVisibility(View.INVISIBLE);
             holder.Tvlesson.setText(R.string.screen1_4);
             holder.Tvlesson.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
@@ -72,9 +64,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
         }
         else if (position == 2)
         {
-            //holder.tvName.setText(R.string.screen1);
-            //holder.tvName.setTextColor(Color.BLUE);
-            //holder.tvName.setBackgroundColor(Color.WHITE);
             holder.tvName.setVisibility(View.INVISIBLE);
             holder.TvChap.setText(R.string.screen2);
             holder.TvChap.setTextColor(Color.GREEN);
@@ -106,16 +95,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
             holder.Tvlesson2.setVisibility(View.VISIBLE);
             holder.Tvlesson2.setText(R.string.screen2_2);
             holder.Tvlesson2.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
-            //start = true;
         }
         else if (position == 3)
         {
-            //holder.tvName.setText(R.string.screen1);
-            //holder.tvName.setTextColor(Color.BLUE);
-            //holder.tvName.setBackgroundColor(Color.WHITE);
             holder.tvName.setVisibility(View.INVISIBLE);
-            //holder.TvChap.setText(R.string.screen2);
-            //holder.TvChap.setTextColor(Color.GREEN);
             holder.TvChap.setVisibility(View.INVISIBLE);
             holder.TvlessonNew.setText(R.string.screen3);
             holder.TvlessonNew.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
@@ -125,12 +108,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
         }
         else if (position == 4)
         {
-            //holder.tvName.setText(R.string.screen1);
-            //holder.tvName.setTextColor(Color.BLUE);
-            //holder.tvName.setBackgroundColor(Color.WHITE);
             holder.tvName.setVisibility(View.INVISIBLE);
-            //holder.TvChap.setText(R.string.screen2);
-            //holder.TvChap.setTextColor(Color.GREEN);
             holder.TvChap.setVisibility(View.INVISIBLE);
             holder.TvlessonNew.setVisibility(View.VISIBLE);
             holder.TvlessonNew.setText(R.string.screen1_6);
@@ -143,7 +121,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
             holder.tvName.setText(R.string.screen1);
             holder.tvName.setTextColor(Color.BLUE);
             holder.tvName.setBackgroundColor(Color.WHITE);
-            //holder.TvChap.setText(R.string.test);
             holder.TvChap.setTextColor(Color.MAGENTA);
             holder.TvChap.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
             holder.Tvlesson.setVisibility(View.VISIBLE);
@@ -154,8 +131,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
                 @Override
                 public void onClick(View v)
                 {
-                    //Intent intent = new Intent (context.getApplicationContext(), Act3.class);
-                    //context.startActivity(intent);
                     Intent intent = new Intent(context.getApplicationContext(), Act3.class);
                     context.startActivity(intent);
                     Activity Act3 = null;
@@ -171,14 +146,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
             holder.Tvlesson.setText(R.string.askhsh1);
             holder.Tvlesson.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
         }
-        /*if (position %2 == 0)
-        {
-            //holder.imgBanner.setBackgroundColor(Color.RED);
-        }
-        else
-            {
-                //holder.imgBanner.setBackgroundColor(Color.GREEN);
-            }*/
     }
 
     @Override

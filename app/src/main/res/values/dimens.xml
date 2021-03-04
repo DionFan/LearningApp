@@ -3,5 +3,4 @@
     <dimen name="pageMargin">0dp</dimen>
     <dimen name="offset">0dp</dimen>
     <dimen name="pageMarginAndOffset">50dp</dimen>
-
 </resources>

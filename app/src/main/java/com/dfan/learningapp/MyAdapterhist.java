@@ -44,7 +44,6 @@ public class MyAdapterhist extends RecyclerView.Adapter<MyAdapterhist.MyViewHold
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position)
     {
-        //holder.tvName.setText(String.format("Page  %d ", position + 1));
         boolean start = false;
         if (position == 0)
         {
@@ -73,12 +72,6 @@ public class MyAdapterhist extends RecyclerView.Adapter<MyAdapterhist.MyViewHold
         }
         else if (position == 1)
         {
-            /*holder.tvName.setText(R.string.hist1_1);
-            holder.tvName.setTextColor(Color.BLUE);
-            holder.tvName.setBackgroundColor(Color.WHITE);
-            holder.TvChap.setVisibility(View.VISIBLE);
-            holder.TvChap.setText(R.string.hist1_3);
-            holder.TvChap.setTextColor(Color.CYAN);*/
             holder.TvlessonNewHist.setText(R.string.hist1_5);
             holder.TvlessonNewHist.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
             holder.TvlessonNewHist.setVisibility(View.VISIBLE);
@@ -86,11 +79,6 @@ public class MyAdapterhist extends RecyclerView.Adapter<MyAdapterhist.MyViewHold
         }
         else if (position == 2)
         {
-            /*holder.tvName.setText(R.string.hist1_1);
-            holder.tvName.setTextColor(Color.BLUE);
-            holder.tvName.setBackgroundColor(Color.WHITE);
-            holder.TvChap.setText(R.string.hist1_3);
-            holder.TvChap.setTextColor(Color.CYAN);*/
             holder.TvlessonNewHist.setText(R.string.hist1_7);
             holder.TvlessonNewHist.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
             holder.TvlessonNewHist.setVisibility(View.VISIBLE);
@@ -108,37 +96,19 @@ public class MyAdapterhist extends RecyclerView.Adapter<MyAdapterhist.MyViewHold
             holder.Tvlesson2.setVisibility(View.VISIBLE);
             holder.Tvlesson2.setText(R.string.hist1_8);
             holder.Tvlesson2.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
-            //start = true;
         }
         else if (position == 3)
         {
-            /*holder.tvName.setText(R.string.hist1_1);
-            holder.tvName.setTextColor(Color.BLUE);
-            holder.tvName.setBackgroundColor(Color.WHITE);
-            holder.TvChap.setText(R.string.hist1_3);
-            holder.TvChap.setTextColor(Color.CYAN);*/
             holder.TvlessonNewHist.setText(R.string.hist1_9);
             holder.TvlessonNewHist.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
             holder.TvlessonNewHist.setVisibility(View.VISIBLE);
-            //holder.Tvlesson2.setVisibility(View.VISIBLE);
-            //holder.Tvlesson2.setText(R.string.hist1_10);
-            //holder.Tvlesson2.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
-
         }
         else if (position == 4)
         {
-            /*holder.tvName.setText(R.string.hist1_1);
-            holder.tvName.setTextColor(Color.BLUE);
-            holder.tvName.setBackgroundColor(Color.WHITE);
-            holder.TvChap.setText(R.string.hist1_3);
-            holder.TvChap.setTextColor(Color.CYAN);*/
             holder.TvlessonNewHist.setText(R.string.hist1_11);
             holder.TvlessonNewHist.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
             holder.TvlessonNewHist.setVisibility(View.VISIBLE);
             holder.Ivpolkrati.setVisibility(View.VISIBLE);
-            //holder.Tvlesson2.setVisibility(View.VISIBLE);
-            //holder.Tvlesson2.setText(R.string.hist1_10);
-            //holder.Tvlesson2.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
         }
         else if (position == 5)
         {
@@ -168,14 +138,6 @@ public class MyAdapterhist extends RecyclerView.Adapter<MyAdapterhist.MyViewHold
             holder.Tvlesson.setText(R.string.askhsh2);
             holder.Tvlesson.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
         }
-        /*if (position %2 == 0)
-        {
-            //holder.imgBanner.setBackgroundColor(Color.RED);
-        }
-        else
-            {
-                //holder.imgBanner.setBackgroundColor(Color.GREEN);
-            }*/
     }
 
     @Override

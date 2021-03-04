@@ -43,7 +43,6 @@ public class MyAdapterhist3 extends RecyclerView.Adapter<MyAdapterhist3.MyViewHo
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position)
     {
-        //holder.tvName.setText(String.format("Page  %d ", position + 1));
         boolean start = false;
         if (position == 0)
         {
@@ -59,11 +58,6 @@ public class MyAdapterhist3 extends RecyclerView.Adapter<MyAdapterhist3.MyViewHo
         }
         else if (position == 1)
         {
-            //holder.tvName.setText(R.string.hist3_1);
-            //holder.tvName.setTextColor(Color.BLUE);
-            //holder.tvName.setBackgroundColor(Color.WHITE);
-            //holder.TvChap.setText(" 1. ΕΙΣΑΓΩΓΗ");
-            //holder.TvChap.setTextColor(Color.BLACK);
             holder.TvNewLesson.setVisibility(View.VISIBLE);
             holder.TvNewLesson.setText(R.string.hist3_3);
             holder.TvNewLesson.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
@@ -73,11 +67,7 @@ public class MyAdapterhist3 extends RecyclerView.Adapter<MyAdapterhist3.MyViewHo
         }
         else if (position == 2)
         {
-            //holder.tvName.setText(R.string.screen1);
-            //holder.tvName.setTextColor(Color.BLUE);
-            //holder.tvName.setBackgroundColor(Color.WHITE);
-            //holder.TvChap.setText(" ");
-            //holder.TvChap.setTextColor(Color.BLACK);
+
             holder.TvNewLesson.setText(R.string.hist3_4);
             holder.TvNewLesson.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
             holder.TvNewLesson.setVisibility(View.VISIBLE);
@@ -85,18 +75,9 @@ public class MyAdapterhist3 extends RecyclerView.Adapter<MyAdapterhist3.MyViewHo
         }
         else if (position == 3)
         {
-            //holder.tvName.setText(R.string.screen1);
-            //holder.tvName.setTextColor(Color.BLUE);
-            //holder.tvName.setBackgroundColor(Color.WHITE);
-            //holder.TvChap.setText("");
-            //holder.TvChap.setTextColor(Color.BLACK);
             holder.TvNewLesson.setText(R.string.hist3_5);
             holder.TvNewLesson.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
             holder.TvNewLesson.setVisibility(View.VISIBLE);
-            //holder.Tvlesson2.setVisibility(View.VISIBLE);
-            //holder.Tvlesson2.setText(R.string.hist1_10);
-            //holder.Tvlesson2.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
-
         }
 
         else if (position == 4)
@@ -128,14 +109,7 @@ public class MyAdapterhist3 extends RecyclerView.Adapter<MyAdapterhist3.MyViewHo
             holder.Tvlesson.setText(R.string.askhsh1);
             holder.Tvlesson.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
         }
-        /*if (position %2 == 0)
-        {
-            //holder.imgBanner.setBackgroundColor(Color.RED);
-        }
-        else
-            {
-                //holder.imgBanner.setBackgroundColor(Color.GREEN);
-            }*/
+
     }
 
     @Override

@@ -48,7 +48,6 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> im
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position)
     {
-        //holder.tvName.setText(String.format("Page  %d ", position + 1));
         boolean start = false;
         if (position == 0)
         {
@@ -80,12 +79,6 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> im
         }
         else if (position == 1)
         {
-            //holder.tvName.setText(R.string.screen1);
-            //holder.tvName.setTextColor(Color.BLUE);
-            //holder.tvName.setBackgroundColor(Color.WHITE);
-            //holder.TvChap.setVisibility(View.VISIBLE);
-            //holder.TvChap.setText(R.string.chap2);
-            //holder.TvChap.setTextColor(Color.GREEN);
             holder.TvlessonNew2.setText(R.string.chap2_4);
             holder.TvlessonNew2.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
             holder.TvlessonNew2.setVisibility(View.VISIBLE);
@@ -93,12 +86,6 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> im
         }
         else if (position == 2)
         {
-            /*holder.tvName.setText(R.string.screen1);
-            holder.tvName.setTextColor(Color.BLUE);
-            holder.tvName.setBackgroundColor(Color.WHITE);
-            holder.TvChap.setVisibility(View.VISIBLE);
-            holder.TvChap.setText(R.string.chap2);
-            holder.TvChap.setTextColor(Color.GREEN);*/
             holder.TvlessonNew2.setText(R.string.chap2_5);
             holder.TvlessonNew2.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
             holder.TvlessonNew2.setVisibility(View.VISIBLE);
@@ -106,12 +93,6 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> im
         }
         else if (position == 3)
         {
-            /*holder.tvName.setText(R.string.screen1);
-            holder.tvName.setTextColor(Color.BLUE);
-            holder.tvName.setBackgroundColor(Color.WHITE);
-            holder.TvChap.setVisibility(View.VISIBLE);
-            holder.TvChap.setText(R.string.chap2);
-            holder.TvChap.setTextColor(Color.GREEN);*/
             holder.TvlessonNew2.setText(R.string.chap2_6);
             holder.TvlessonNew2.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
             holder.TvlessonNew2.setVisibility(View.VISIBLE);
@@ -124,7 +105,6 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> im
             holder.tvName.setTextColor(Color.BLUE);
             holder.tvName.setBackgroundColor(Color.WHITE);
             holder.TvChap.setVisibility(View.VISIBLE);
-            //holder.TvChap.setText(R.string.test1);
             holder.TvChap.setTextColor(Color.MAGENTA);
             holder.TvChap.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD);
             holder.Tvlesson.setVisibility(View.VISIBLE);
@@ -136,8 +116,6 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> im
                 public void onClick(View v)
                 {
                     System.out.println("***EDW1");
-                    //Intent intent = new Intent (context.getApplicationContext(), Chapter2Que.class);
-                    //context.startActivity(intent);
                     Intent intent = new Intent(context.getApplicationContext(), Chapter2Que.class);
                     intent.putExtra("Points1", grades1);
                     context.startActivity(intent);
@@ -152,14 +130,6 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> im
             holder.BtTest.setVisibility(View.INVISIBLE);
             holder.Tvlesson3.setVisibility(View.INVISIBLE);
         }
-        /*if (position %2 == 0)
-        {
-            //holder.imgBanner.setBackgroundColor(Color.RED);
-        }
-        else
-            {
-                //holder.imgBanner.setBackgroundColor(Color.GREEN);
-            }*/
     }
 
     @Override
@@ -204,10 +174,7 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> im
                 @Override
                 public void onClick (View v)
                 {
-                    //Context context = null;
                     System.out.println("***EDW2");
-                    //Intent intent = new Intent (context.getApplicationContext(), Chapter2Que.class);
-                    //context.startActivity(intent);
                     Intent intent = new Intent(context.getApplicationContext(), Chapter2Que.class);
                     context.startActivity(intent);
                     Activity Chapter2Que = null;
